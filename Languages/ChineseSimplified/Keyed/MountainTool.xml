@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MountainTool_Title>山脉工具</MountainTool_Title>
+  <MountainTool_Mode>模式</MountainTool_Mode>
+  <MountainTool_Add>添加</MountainTool_Add>
+  <MountainTool_Remove>移除</MountainTool_Remove>
+  <MountainTool_RockType>岩石类型</MountainTool_RockType>
+  <MountainTool_MostCommon>地图上最常见</MountainTool_MostCommon>
+  <MountainTool_RockTip>选择山脉岩石 / 矿石定义</MountainTool_RockTip>
+  <MountainTool_Fuzziness>模糊度</MountainTool_Fuzziness>
+  <MountainTool_FuzzinessTip>柔化绘制区域边缘（0 = 硬边）。</MountainTool_FuzzinessTip>
+  <MountainTool_SteelShare>钢铁占比 %</MountainTool_SteelShare>
+  <MountainTool_SteelShareTip>转换为钢铁的山脉格子占比。需要足够的总格子以满足最小数量（例如 10% + 最小 5 ⇒ ≥50 格）。</MountainTool_SteelShareTip>
+  <MountainTool_SteelMin>钢铁最小连通格数</MountainTool_SteelMin>
+  <MountainTool_SteelMinTip>最少钢铁格数。若 floor(总数 × 占比) 不足则跳过钢铁。</MountainTool_SteelMinTip>
+  <MountainTool_ComponentsShare>零件占比 %</MountainTool_ComponentsShare>
+  <MountainTool_ComponentsShareTip>转换为零件的山脉格子占比。需要足够的总格子以满足最小数量。</MountainTool_ComponentsShareTip>
+  <MountainTool_ComponentsMin>零件最小连通格数</MountainTool_ComponentsMin>
+  <MountainTool_ComponentsMinTip>最少零件格数。若 floor(总数 × 占比) 不足则跳过零件。</MountainTool_ComponentsMinTip>
+  <MountainTool_Nuke>清除选区内一切</MountainTool_Nuke>
+  <MountainTool_NukeTip>摧毁石块、间歇泉、飞船部件、建筑、物品等（保留小人）。</MountainTool_NukeTip>
+  <MountainTool_DrawTool>绘制工具</MountainTool_DrawTool>
+  <MountainTool_Rect>矩形</MountainTool_Rect>
+  <MountainTool_RectTip>两点对角矩形。</MountainTool_RectTip>
+  <MountainTool_Path>路径</MountainTool_Path>
+  <MountainTool_PathTip>多点折线路径。</MountainTool_PathTip>
+  <MountainTool_PathThickness>路径格子厚度</MountainTool_PathThickness>
+  <MountainTool_PathThicknessTip>模糊前沿路径中心线的切比雪夫光环（1 = 仅中心线）。</MountainTool_PathThicknessTip>
+  <MountainTool_HelpRect>矩形：左键取角 · 右键取消角点 · Esc 清空 / 关闭</MountainTool_HelpRect>
+  <MountainTool_HelpPath>路径：左键加点 · 双击结束 · 右键撤销 · Esc 清空 / 关闭</MountainTool_HelpPath>
+  <MountainTool_HelpArmed>对话框打开期间工具保持启用。</MountainTool_HelpArmed>
+  <MountainTool_CloseConfirm>关闭山脉工具？</MountainTool_CloseConfirm>
+  <MountainTool_Search>搜索…</MountainTool_Search>
+  <MountainTool_ToolRectSecond>山脉 {0}：第二个角（右键取消角点，Esc 清空）...</MountainTool_ToolRectSecond>
+  <MountainTool_ToolRectFirst>山脉 {0}：第一个角（Esc 清空）...</MountainTool_ToolRectFirst>
+  <MountainTool_ToolPath>山脉 {0} 路径：{1} 点 — 左键添加，双击结束，右键撤销，Esc 清空</MountainTool_ToolPath>
+  <MountainTool_MsgAdd>山脉添加：{0} 格（{1}），模糊={2} 矿物：钢铁={3}，零件={4}。</MountainTool_MsgAdd>
+  <MountainTool_MsgRemove>山脉移除：影响 {0} 格。</MountainTool_MsgRemove>
+
+</LanguageData>

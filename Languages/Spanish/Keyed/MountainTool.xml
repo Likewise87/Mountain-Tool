@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MountainTool_Title>Herramienta de montaña</MountainTool_Title>
+  <MountainTool_Mode>Modo</MountainTool_Mode>
+  <MountainTool_Add>Añadir</MountainTool_Add>
+  <MountainTool_Remove>Quitar</MountainTool_Remove>
+  <MountainTool_RockType>Tipo de roca</MountainTool_RockType>
+  <MountainTool_MostCommon>Más común en el mapa</MountainTool_MostCommon>
+  <MountainTool_RockTip>Elige la roca / mena de montaña</MountainTool_RockTip>
+  <MountainTool_Fuzziness>Difuminado</MountainTool_Fuzziness>
+  <MountainTool_FuzzinessTip>Suaviza el borde del área pintada (0 = duro).</MountainTool_FuzzinessTip>
+  <MountainTool_SteelShare>Porcentaje de acero %</MountainTool_SteelShare>
+  <MountainTool_SteelShareTip>Parte de las celdas de montaña convertidas en acero. Necesita suficientes celdas para el mínimo (p. ej. 10% + mín. 5 ⇒ ≥50 celdas).</MountainTool_SteelShareTip>
+  <MountainTool_SteelMin>Acero: celdas mín. conectadas</MountainTool_SteelMin>
+  <MountainTool_SteelMinTip>Celdas mínimas de acero. Omite el acero si floor(total × parte) es menor.</MountainTool_SteelMinTip>
+  <MountainTool_ComponentsShare>Porcentaje de componentes %</MountainTool_ComponentsShare>
+  <MountainTool_ComponentsShareTip>Parte de las celdas de montaña convertidas en componentes. Necesita suficientes celdas para el mínimo.</MountainTool_ComponentsShareTip>
+  <MountainTool_ComponentsMin>Componentes: celdas mín. conectadas</MountainTool_ComponentsMin>
+  <MountainTool_ComponentsMinTip>Celdas mínimas de componentes. Omite componentes si floor(total × parte) es menor.</MountainTool_ComponentsMinTip>
+  <MountainTool_Nuke>Destruir todo en la selección</MountainTool_Nuke>
+  <MountainTool_NukeTip>Destruye trozos, géiseres, piezas de nave, edificios, objetos, etc. (los peones se respetan).</MountainTool_NukeTip>
+  <MountainTool_DrawTool>Herramienta de dibujo</MountainTool_DrawTool>
+  <MountainTool_Rect>Rectángulo</MountainTool_Rect>
+  <MountainTool_RectTip>Rectángulo de dos esquinas.</MountainTool_RectTip>
+  <MountainTool_Path>Ruta</MountainTool_Path>
+  <MountainTool_PathTip>Ruta de puntos.</MountainTool_PathTip>
+  <MountainTool_PathThickness>Grosor de celda de la ruta</MountainTool_PathThickness>
+  <MountainTool_PathThicknessTip>Halo de Chebyshev alrededor de la línea central antes del difuminado (1 = solo línea).</MountainTool_PathThicknessTip>
+  <MountainTool_HelpRect>Rect: clic izq. esquinas · clic der. cancelar · Esc limpiar / cerrar</MountainTool_HelpRect>
+  <MountainTool_HelpPath>Ruta: clic izq. punto · doble clic fin · clic der. deshacer · Esc limpiar / cerrar</MountainTool_HelpPath>
+  <MountainTool_HelpArmed>La herramienta permanece activa mientras este diálogo esté abierto.</MountainTool_HelpArmed>
+  <MountainTool_CloseConfirm>¿Cerrar la herramienta de montaña?</MountainTool_CloseConfirm>
+  <MountainTool_Search>Buscar…</MountainTool_Search>
+  <MountainTool_ToolRectSecond>Montaña {0}: segunda esquina (clic der. cancelar, Esc limpiar)...</MountainTool_ToolRectSecond>
+  <MountainTool_ToolRectFirst>Montaña {0}: primera esquina (Esc limpiar)...</MountainTool_ToolRectFirst>
+  <MountainTool_ToolPath>Montaña {0} ruta: {1} pts — clic izq. añadir, doble clic fin, clic der. deshacer, Esc limpiar</MountainTool_ToolPath>
+  <MountainTool_MsgAdd>Montaña añadir: {0} celdas ({1}), difuminado={2} minerales: acero={3}, componentes={4}.</MountainTool_MsgAdd>
+  <MountainTool_MsgRemove>Montaña quitar: {0} celdas afectadas.</MountainTool_MsgRemove>
+
+</LanguageData>

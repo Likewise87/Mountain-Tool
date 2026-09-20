@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MountainTool_Title>Berg-Werkzeug</MountainTool_Title>
+  <MountainTool_Mode>Modus</MountainTool_Mode>
+  <MountainTool_Add>Hinzufügen</MountainTool_Add>
+  <MountainTool_Remove>Entfernen</MountainTool_Remove>
+  <MountainTool_RockType>Gesteinsart</MountainTool_RockType>
+  <MountainTool_MostCommon>Häufigstes auf der Karte</MountainTool_MostCommon>
+  <MountainTool_RockTip>Berggestein / Erz-Def auswählen</MountainTool_RockTip>
+  <MountainTool_Fuzziness>Unschärfe</MountainTool_Fuzziness>
+  <MountainTool_FuzzinessTip>Weicht den Rand der bemalten Fläche auf (0 = hart).</MountainTool_FuzzinessTip>
+  <MountainTool_SteelShare>Stahl-Anteil %</MountainTool_SteelShare>
+  <MountainTool_SteelShareTip>Anteil der gesetzten Bergzellen, die zu Stahl werden. Benötigt genug Zellen für die Mindestgröße (z. B. 10% + min 5 ⇒ ≥50 Zellen).</MountainTool_SteelShareTip>
+  <MountainTool_SteelMin>Stahl min. verbundene Zellen</MountainTool_SteelMin>
+  <MountainTool_SteelMinTip>Mindestzahl Stahlzellen. Überspringt Stahl, wenn floor(gesamt × Anteil) darunter liegt.</MountainTool_SteelMinTip>
+  <MountainTool_ComponentsShare>Komponenten-Anteil %</MountainTool_ComponentsShare>
+  <MountainTool_ComponentsShareTip>Anteil der gesetzten Bergzellen, die zu Komponenten werden. Benötigt genug Zellen für die Mindestgröße.</MountainTool_ComponentsShareTip>
+  <MountainTool_ComponentsMin>Komponenten min. verbundene Zellen</MountainTool_ComponentsMin>
+  <MountainTool_ComponentsMinTip>Mindestzahl Komponenten-Zellen. Überspringt Komponenten, wenn floor(gesamt × Anteil) darunter liegt.</MountainTool_ComponentsMinTip>
+  <MountainTool_Nuke>Alles in Auswahl vernichten</MountainTool_Nuke>
+  <MountainTool_NukeTip>Zerstört Brocken, Geysire, Schiffsteile, Gebäude, Gegenstände usw. (Figuren bleiben verschont).</MountainTool_NukeTip>
+  <MountainTool_DrawTool>Zeichenwerkzeug</MountainTool_DrawTool>
+  <MountainTool_Rect>Rechteck</MountainTool_Rect>
+  <MountainTool_RectTip>Rechteck mit zwei Ecken.</MountainTool_RectTip>
+  <MountainTool_Path>Pfad</MountainTool_Path>
+  <MountainTool_PathTip>Pfad aus Punkten.</MountainTool_PathTip>
+  <MountainTool_PathThickness>Pfad-Zellendicke</MountainTool_PathThickness>
+  <MountainTool_PathThicknessTip>Tschebyschew-Halo um die Pfadmittellinie vor Unschärfe (1 = nur Linie).</MountainTool_PathThicknessTip>
+  <MountainTool_HelpRect>Rechteck: LMT Ecken · RMT Ecke abbrechen · Esc leeren / schließen</MountainTool_HelpRect>
+  <MountainTool_HelpPath>Pfad: LMT Punkt · Doppelklick beenden · RMT rückgängig · Esc leeren / schließen</MountainTool_HelpPath>
+  <MountainTool_HelpArmed>Werkzeug bleibt aktiv, solange dieser Dialog offen ist.</MountainTool_HelpArmed>
+  <MountainTool_CloseConfirm>Berg-Werkzeug schließen?</MountainTool_CloseConfirm>
+  <MountainTool_Search>Suchen…</MountainTool_Search>
+  <MountainTool_ToolRectSecond>Berg {0}: zweite Ecke (RMT Ecke abbrechen, Esc leeren)...</MountainTool_ToolRectSecond>
+  <MountainTool_ToolRectFirst>Berg {0}: erste Ecke (Esc leeren)...</MountainTool_ToolRectFirst>
+  <MountainTool_ToolPath>Berg {0} Pfad: {1} Pkte — LMT Punkt, Doppelklick Ende, RMT rückgängig, Esc leeren</MountainTool_ToolPath>
+  <MountainTool_MsgAdd>Berg hinzufügen: {0} Zellen ({1}), Unschärfe={2} Mineralien: Stahl={3}, Komponenten={4}.</MountainTool_MsgAdd>
+  <MountainTool_MsgRemove>Berg entfernen: {0} Zellen berührt.</MountainTool_MsgRemove>
+
+</LanguageData>

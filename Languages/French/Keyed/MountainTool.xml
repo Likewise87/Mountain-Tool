@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MountainTool_Title>Outil Montagne</MountainTool_Title>
+  <MountainTool_Mode>Mode</MountainTool_Mode>
+  <MountainTool_Add>Ajouter</MountainTool_Add>
+  <MountainTool_Remove>Retirer</MountainTool_Remove>
+  <MountainTool_RockType>Type de roche</MountainTool_RockType>
+  <MountainTool_MostCommon>Plus courant sur la carte</MountainTool_MostCommon>
+  <MountainTool_RockTip>Choisir la roche / le minerai de montagne</MountainTool_RockTip>
+  <MountainTool_Fuzziness>Flou</MountainTool_Fuzziness>
+  <MountainTool_FuzzinessTip>Adoucit le bord de la zone peinte (0 = net).</MountainTool_FuzzinessTip>
+  <MountainTool_SteelShare>Part d'acier %</MountainTool_SteelShare>
+  <MountainTool_SteelShareTip>Part des cellules de montagne converties en acier. Il faut assez de cellules pour le minimum (ex. 10% + min 5 ⇒ ≥50 cellules).</MountainTool_SteelShareTip>
+  <MountainTool_SteelMin>Acier : cellules min. connectées</MountainTool_SteelMin>
+  <MountainTool_SteelMinTip>Nombre minimum de cellules d'acier. Ignore l'acier si floor(total × part) est inférieur.</MountainTool_SteelMinTip>
+  <MountainTool_ComponentsShare>Part de composants %</MountainTool_ComponentsShare>
+  <MountainTool_ComponentsShareTip>Part des cellules de montagne converties en composants. Il faut assez de cellules pour le minimum.</MountainTool_ComponentsShareTip>
+  <MountainTool_ComponentsMin>Composants : cellules min. connectées</MountainTool_ComponentsMin>
+  <MountainTool_ComponentsMinTip>Nombre minimum de cellules de composants. Ignore les composants si floor(total × part) est inférieur.</MountainTool_ComponentsMinTip>
+  <MountainTool_Nuke>Tout détruire dans la sélection</MountainTool_Nuke>
+  <MountainTool_NukeTip>Détruit les blocs, geysers, pièces de vaisseau, bâtiments, objets, etc. (les pions sont épargnés).</MountainTool_NukeTip>
+  <MountainTool_DrawTool>Outil de dessin</MountainTool_DrawTool>
+  <MountainTool_Rect>Rectangle</MountainTool_Rect>
+  <MountainTool_RectTip>Rectangle à deux coins.</MountainTool_RectTip>
+  <MountainTool_Path>Chemin</MountainTool_Path>
+  <MountainTool_PathTip>Chemin de points.</MountainTool_PathTip>
+  <MountainTool_PathThickness>Épaisseur de cellule du chemin</MountainTool_PathThickness>
+  <MountainTool_PathThicknessTip>Halo de Tchebychev autour de la ligne centrale avant le flou (1 = ligne seule).</MountainTool_PathThicknessTip>
+  <MountainTool_HelpRect>Rect : clic g. coins · clic d. annuler · Échap vider / fermer</MountainTool_HelpRect>
+  <MountainTool_HelpPath>Chemin : clic g. point · double-clic fin · clic d. annuler · Échap vider / fermer</MountainTool_HelpPath>
+  <MountainTool_HelpArmed>L'outil reste actif tant que ce dialogue est ouvert.</MountainTool_HelpArmed>
+  <MountainTool_CloseConfirm>Fermer l'outil Montagne ?</MountainTool_CloseConfirm>
+  <MountainTool_Search>Rechercher…</MountainTool_Search>
+  <MountainTool_ToolRectSecond>Montagne {0} : second coin (clic d. annuler, Échap vider)...</MountainTool_ToolRectSecond>
+  <MountainTool_ToolRectFirst>Montagne {0} : premier coin (Échap vider)...</MountainTool_ToolRectFirst>
+  <MountainTool_ToolPath>Montagne {0} chemin : {1} pts — clic g. ajouter, double-clic fin, clic d. annuler, Échap vider</MountainTool_ToolPath>
+  <MountainTool_MsgAdd>Montagne ajouter : {0} cellules ({1}), flou={2} minerais : acier={3}, composants={4}.</MountainTool_MsgAdd>
+  <MountainTool_MsgRemove>Montagne retirer : {0} cellules touchées.</MountainTool_MsgRemove>
+
+</LanguageData>

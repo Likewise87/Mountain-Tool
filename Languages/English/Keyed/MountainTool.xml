@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MountainTool_Title>Mountain Tool</MountainTool_Title>
+  <MountainTool_Mode>Mode</MountainTool_Mode>
+  <MountainTool_Add>Add</MountainTool_Add>
+  <MountainTool_Remove>Remove</MountainTool_Remove>
+  <MountainTool_RockType>Rock type</MountainTool_RockType>
+  <MountainTool_MostCommon>Most common on map</MountainTool_MostCommon>
+  <MountainTool_RockTip>Choose mountain rock / ore def</MountainTool_RockTip>
+  <MountainTool_Fuzziness>Fuzziness</MountainTool_Fuzziness>
+  <MountainTool_FuzzinessTip>Softens the edge of the painted area (0 = hard).</MountainTool_FuzzinessTip>
+  <MountainTool_SteelShare>Steel share %</MountainTool_SteelShare>
+  <MountainTool_SteelShareTip>Share of placed mountain cells converted to steel. Needs enough total cells for the min size (e.g. 10% + min 5 ⇒ ≥50 cells).</MountainTool_SteelShareTip>
+  <MountainTool_SteelMin>Steel min connected cells</MountainTool_SteelMin>
+  <MountainTool_SteelMinTip>Minimum steel cells to place. Skips steel if floor(total × share) is below this.</MountainTool_SteelMinTip>
+  <MountainTool_ComponentsShare>Components share %</MountainTool_ComponentsShare>
+  <MountainTool_ComponentsShareTip>Share of placed mountain cells converted to components. Needs enough total cells for the min size.</MountainTool_ComponentsShareTip>
+  <MountainTool_ComponentsMin>Components min connected cells</MountainTool_ComponentsMin>
+  <MountainTool_ComponentsMinTip>Minimum component cells to place. Skips components if floor(total × share) is below this.</MountainTool_ComponentsMinTip>
+  <MountainTool_Nuke>Nuke everything in selection</MountainTool_Nuke>
+  <MountainTool_NukeTip>Destroy chunks, geysers, ship parts, buildings, items, etc. (pawns are spared).</MountainTool_NukeTip>
+  <MountainTool_DrawTool>Draw tool</MountainTool_DrawTool>
+  <MountainTool_Rect>Rect</MountainTool_Rect>
+  <MountainTool_RectTip>Two-corner rectangle.</MountainTool_RectTip>
+  <MountainTool_Path>Path</MountainTool_Path>
+  <MountainTool_PathTip>Polyline path.</MountainTool_PathTip>
+  <MountainTool_PathThickness>Path cell thickness</MountainTool_PathThickness>
+  <MountainTool_PathThicknessTip>Chebyshev halo around the path centerline before fuzziness (1 = line only).</MountainTool_PathThicknessTip>
+  <MountainTool_HelpRect>Rect: LMB corners · RMB cancel corner · Esc clear / close</MountainTool_HelpRect>
+  <MountainTool_HelpPath>Path: LMB add · double-click end · RMB undo · Esc clear / close</MountainTool_HelpPath>
+  <MountainTool_HelpArmed>Tool stays armed while this dialog is open.</MountainTool_HelpArmed>
+  <MountainTool_CloseConfirm>Close Mountain tool?</MountainTool_CloseConfirm>
+  <MountainTool_Search>Search…</MountainTool_Search>
+  <MountainTool_ToolRectSecond>Mountain {0}: second corner (RMB cancel corner, Esc clear)...</MountainTool_ToolRectSecond>
+  <MountainTool_ToolRectFirst>Mountain {0}: first corner (Esc clear)...</MountainTool_ToolRectFirst>
+  <MountainTool_ToolPath>Mountain {0} path: {1} pts — LMB add, double-click end, RMB undo, Esc clear</MountainTool_ToolPath>
+  <MountainTool_MsgAdd>Mountain Add: {0} cells ({1}), fuzz={2} minerals: steel={3}, components={4}.</MountainTool_MsgAdd>
+  <MountainTool_MsgRemove>Mountain Remove: touched {0} cells.</MountainTool_MsgRemove>
+
+</LanguageData>
