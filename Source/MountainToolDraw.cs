@@ -129,8 +129,8 @@ namespace MountainTool
 
             List<IntVec3> previewPts = new List<IntVec3>(pathPoints);
             IntVec3 mouse = UI.MouseCell();
-            bool mousePreview = mouse.InBounds(map)
-                && (previewPts.Count == 0 || previewPts[previewPts.Count - 1] != mouse);
+            // Off-map mouse still previews so dragging past the edge is easy.
+            bool mousePreview = previewPts.Count == 0 || previewPts[previewPts.Count - 1] != mouse;
             if (mousePreview)
                 previewPts.Add(mouse);
 
@@ -190,8 +190,8 @@ namespace MountainTool
             Map? map = Find.CurrentMap;
             if (map == null) return;
 
+            // Allow off-map clicks so map-edge corners are easy to hit; placement still clips to map.
             IntVec3 cell = UI.MouseCell();
-            if (!cell.InBounds(map)) return;
 
             if (Kind == MountainToolDrawKind.Rect)
                 HandleRectClick(map, cell);

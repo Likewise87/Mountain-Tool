@@ -17,13 +17,6 @@ namespace MountainTool
             "Limestone"
         };
 
-        private static readonly IntVec3[] NeighborOffsets =
-        {
-            new IntVec3(-1, 0, -1), new IntVec3(0, 0, -1), new IntVec3(1, 0, -1),
-            new IntVec3(-1, 0, 0),                         new IntVec3(1, 0, 0),
-            new IntVec3(-1, 0, 1),  new IntVec3(0, 0, 1),  new IntVec3(1, 0, 1)
-        };
-
         private const float NoiseAcceptMin = 0.15f;
         private const float NoiseAcceptMax = 0.85f;
         private const float PerlinScale = 0.18f;
@@ -93,7 +86,7 @@ namespace MountainTool
             foreach (IntVec3 cell in mask)
             {
                 bool force = core != null && core.Contains(cell);
-                if (!force && !ShouldPlaceMountainCell(cell, mask, fuzziness, seedX, seedZ)) continue;
+                if (!force && !ShouldPlaceMountainCell(cell, mask, fuzziness, seedX, seedZ, map)) continue;
                 toPlace.Add(cell);
             }
 
@@ -104,7 +97,6 @@ namespace MountainTool
             {
                 IntVec3 cell = toPlace[i];
                 if (!TryPlaceMountainRock(map, cell, rock, nukeEverything)) continue;
-                map.roofGrid.SetRoof(cell, RoofDefOf.RoofRockThick);
                 if (hewn != null)
                     ApplyRoughHewnHalo(map, cell, hewn);
                 placed.Add(cell);
@@ -123,7 +115,7 @@ namespace MountainTool
                     componentCells = TryPlaceOreShare(map, placed, comps, componentsShare, componentsMinSize);
             }
 
-            FogEnclosedRock(map, placed);
+            ApplyRoofsAndFog(map, placed);
 
             Messages.Message(
                 "MountainTool_MsgAdd".Translate(
@@ -275,11 +267,11 @@ namespace MountainTool
         }
 
         private static bool ShouldPlaceMountainCell(
-            IntVec3 cell, HashSet<IntVec3> mask, int fuzziness, float seedX, float seedZ)
+            IntVec3 cell, HashSet<IntVec3> mask, int fuzziness, float seedX, float seedZ, Map map)
         {
             if (fuzziness <= 0) return true;
 
-            int edgeDist = MaskEdgeDistance(cell, mask, fuzziness);
+            int edgeDist = MaskEdgeDistance(cell, mask, fuzziness, map);
             float edgeFactor = Mathf.Clamp01(edgeDist / (float)fuzziness);
             float accept = Mathf.Lerp(NoiseAcceptMin, NoiseAcceptMax, edgeFactor);
             float noise = Mathf.PerlinNoise(
@@ -290,8 +282,10 @@ namespace MountainTool
 
         /// <summary>
         /// Chebyshev distance to exterior minus 1 (0 on the mask boundary), matching rect-edge semantics.
+        /// Out-of-bounds neighbors count as inside the mask (mountain continues past the map edge),
+        /// so border cells stay solid when the selection reaches or goes past the edge.
         /// </summary>
-        private static int MaskEdgeDistance(IntVec3 cell, HashSet<IntVec3> mask, int maxUseful)
+        private static int MaskEdgeDistance(IntVec3 cell, HashSet<IntVec3> mask, int maxUseful, Map map)
         {
             int limit = maxUseful + 1;
             int minToOutside = int.MaxValue;
@@ -302,6 +296,7 @@ namespace MountainTool
                     int cheb = Mathf.Max(Mathf.Abs(dx), Mathf.Abs(dz));
                     if (cheb == 0 || cheb >= minToOutside) continue;
                     IntVec3 n = new IntVec3(cell.x + dx, 0, cell.z + dz);
+                    if (map != null && !n.InBounds(map)) continue;
                     if (!mask.Contains(n))
                         minToOutside = cheb;
                 }
@@ -405,7 +400,6 @@ namespace MountainTool
             if (!cell.InBounds(map)) return false;
             DestroyRockOrOreAt(map, cell);
             GenSpawn.Spawn(ore, cell, map, WipeMode.Vanish);
-            map.roofGrid.SetRoof(cell, RoofDefOf.RoofRockThick);
             return true;
         }
 
@@ -621,27 +615,46 @@ namespace MountainTool
                 map.terrainGrid.SetTerrain(cell, hewn);
         }
 
-        private static void FogEnclosedRock(Map map, List<IntVec3> placed)
+        /// <summary>
+        /// Outer mountain cells get rock roof (thin); deeper cells (rock within Chebyshev radius 2)
+        /// get overhead mountain. Fog uses the same idea at radius 1 (fully enclosed by rock / map edge).
+        /// </summary>
+        private static void ApplyRoofsAndFog(Map map, List<IntVec3> placed)
         {
-            if (map.fogGrid == null || placed == null) return;
+            if (placed == null || placed.Count == 0) return;
+
+            const int thickRoofRadius = 2;
+            const int fogRadius = 1;
 
             for (int i = 0; i < placed.Count; i++)
             {
                 IntVec3 cell = placed[i];
                 if (!cell.InBounds(map)) continue;
                 if (!IsInteriorFogMineableCell(map, cell)) continue;
-                if (!AllEightNeighborsAreRockOrOre(map, cell)) continue;
+
+                bool deep = AllWithinChebyshevAreRockOrOre(map, cell, thickRoofRadius);
+                map.roofGrid.SetRoof(cell, deep ? RoofDefOf.RoofRockThick : RoofDefOf.RoofRockThin);
+
+                if (map.fogGrid == null) continue;
+                if (!AllWithinChebyshevAreRockOrOre(map, cell, fogRadius)) continue;
                 if (map.fogGrid.IsFogged(cell)) continue;
                 map.fogGrid.Refog(CellRect.SingleCell(cell));
             }
         }
 
-        private static bool AllEightNeighborsAreRockOrOre(Map map, IntVec3 cell)
+        private static bool AllWithinChebyshevAreRockOrOre(Map map, IntVec3 cell, int radius)
         {
-            for (int i = 0; i < NeighborOffsets.Length; i++)
+            for (int dx = -radius; dx <= radius; dx++)
             {
-                if (!IsInteriorFogMineableCell(map, cell + NeighborOffsets[i]))
-                    return false;
+                for (int dz = -radius; dz <= radius; dz++)
+                {
+                    if (dx == 0 && dz == 0) continue;
+                    IntVec3 n = new IntVec3(cell.x + dx, 0, cell.z + dz);
+                    // Out of bounds counts as rock (map edge seals the cell).
+                    if (!n.InBounds(map)) continue;
+                    if (!IsInteriorFogMineableCell(map, n))
+                        return false;
+                }
             }
 
             return true;
